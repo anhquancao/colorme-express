@@ -20,6 +20,32 @@ module.exports = {
         //cắt bỏ ký tự - ở đầu và cuối chuỗi
         // eval(obj).value = str.toUpperCase();
         return str;
-    }
+    },
+    timeSince: function (date) {
 
+        const seconds = Math.floor((new Date() - date) / 1000);
+
+        let interval = Math.floor(seconds / 31536000);
+
+        if (interval > 1) {
+            return interval + "năm";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+            return interval + " tháng";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+            return interval + " ngày";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+            return interval + " giờ";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+            return interval + " phút";
+        }
+        return Math.floor(seconds) + " giây";
+    }
 };

@@ -1,4 +1,5 @@
 const pool = require('../config/database');
+const helper = require('../util/helper');
 
 module.exports = {
     comments: function (req, res) {
@@ -30,6 +31,7 @@ module.exports = {
                         commenter: Object.assign({}, r.users, {
                             url: process.env.BASE_URL + "profile/" + r.users.username
                         }),
+                        created_at: helper.timeSince(Date.parse(r.comments.created_at)),
                         product: {
                             author: {
                                 id: r.products.author_id
