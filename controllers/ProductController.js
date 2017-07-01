@@ -6,9 +6,12 @@ module.exports = {
         const productId = req.params.product_id;
         const userId = req.query.user_id;
 
-        const sql = "select comments.id as id, " +
-            "(select count(id) from comment_likes where user_id = " + userId + " and comment_id = comments.id) as comment_likes," +
-            "comments.content as content, " +
+        let sql = "select comments.id as id, ";
+        if (userId) {
+            sql += "(select count(id) from comment_likes " +
+                "where user_id = " + userId + " and comment_id = comments.id) as comment_likes,";
+        }
+        sql += "comments.content as content, " +
             "comments.created_at as created_at," +
             "users.avatar_url, " +
             "users.id, " +
@@ -27,7 +30,7 @@ module.exports = {
             res.json({
                 comments: rows.map(function (r) {
                     return Object.assign({}, r.comments, {
-                        liked: r[''].comment_likes === 1,
+                        liked: r[''] && r[''].comment_likes === 1,
                         commenter: Object.assign({}, r.users, {
                             url: process.env.BASE_URL + "profile/" + r.users.username
                         }),
