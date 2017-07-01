@@ -2,6 +2,8 @@ const express = require('express');
 require('dotenv').config();
 const productsRouter = require('../routes/products');
 const publicRouter = require('../routes/public');
+const bodyParser = require('body-parser');
+const commentRouter = require('../routes/comment');
 
 
 const origins = [
@@ -13,6 +15,9 @@ const origins = [
     "http://colorme.dev"
 ];
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // Add headers
 app.use(function (req, res, next) {
@@ -36,6 +41,7 @@ app.use(function (req, res, next) {
 
 app.use('/products', productsRouter);
 app.use('/public', publicRouter);
+app.use('/comment', commentRouter);
 
 const port = process.env.PORT || 8080;
 
