@@ -12,6 +12,7 @@ module.exports = {
                 "where user_id = " + userId + " and comment_id = comments.id) as comment_likes,";
         }
         sql += "comments.content as content, " +
+            "comments.likes as likes, " +
             "comments.created_at as created_at," +
             "users.avatar_url, " +
             "users.id, " +
@@ -25,7 +26,7 @@ module.exports = {
 
         const options = {sql, nestTables: true};
         pool.query(options, function (error, rows, fields) {
-            if (error) throw error;
+            if (error) console.log(error);
             // console.log(rows);
             res.json({
                 comments: rows.map(function (r) {
@@ -49,7 +50,7 @@ module.exports = {
     products: function (req, res) {
         const sql = 'select * from products order by created_at limit 10 offset 0';
         pool.query(sql, function (error, rows, fields) {
-            if (error) throw error;
+            if (error) console.log(error);
             res.json({
                 products: rows.map(function (r) {
                     return {
