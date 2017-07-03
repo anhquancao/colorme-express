@@ -25,7 +25,7 @@ module.exports = {
                 author: transformer.author(result.users)
             });
 
-            if (result.categories) {
+            if (result.categories.id) {
                 data['category'] = {
                     name: result.categories.category_name,
                     id: result.categories.id
@@ -35,10 +35,17 @@ module.exports = {
             pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
                 if (error) return console.log(error);
                 data['likes_count'] = result[0].count;
-                pool.query('select * from products where author_id=' + product.author_id +
-                    " and products.id != " + product.id + " order by RAND() limit 4", function (error, products, fields) {
-                    data['more_products'] = products.map(function (p) {
-                        return Object.assign({}, p, transformer.productType(p));
+                const sql = 'select * from products ' +
+                    'join users on users.id = products.author_id where author_id=' + product.author_id +
+                    " and products.id != " + product.id + " order by RAND() limit 4";
+                const options = {sql, nestTables: true};
+                pool.query(options, function (error, result, fields) {
+                    if (error) return console.log(error);
+
+                    data['more_products'] = result.map(function (r) {
+
+                        const p = Object.assign({}, r.products, transformer.productType(r.products));
+                        return Object.assign({}, p, {author: transformer.author(r.users)});
                     });
                     pool.query('select name, username, avatar_url ' +
                         'from users join likes on ' +
