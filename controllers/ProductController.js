@@ -7,7 +7,8 @@ module.exports = {
     content: function (req, res) {
         const productId = req.params.product_id;
         const user_id = req.query.user_id;
-        let sql = "select * from products " +
+        let sql = "select *, (select count(id) from comments where comments.product_id = products.id) as comments_count " +
+            "from products " +
             "join users on users.id = products.author_id " +
             "left join categories on categories.id = products.category_id " +
             "where products.id = " + productId;
@@ -30,6 +31,9 @@ module.exports = {
                     name: result.categories.category_name,
                     id: result.categories.id
                 }
+            }
+            if (result[''].comments_count) {
+                data['comments_count'] = result[''].comments_count;
             }
 
             pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
@@ -139,7 +143,8 @@ module.exports = {
             page = req.query.page;
         }
 
-        let sql = "select * from products " +
+        let sql = "select *, (select count(id) from comments where comments.product_id = products.id) as comments_count " +
+            "from products " +
             "join users on users.id = products.author_id " +
             "left join users as fusers on fusers.id = products.feature_id " +
             "left join categories on categories.id = products.category_id " +
@@ -169,6 +174,10 @@ module.exports = {
                         let data = Object.assign({}, product, {
                             author: transformer.author(result.users)
                         });
+
+                        if (result[''].comments_count) {
+                            data['comments_count'] = result[''].comments_count;
+                        }
 
                         if (result.groups.id) {
                             data['group'] = {
