@@ -156,7 +156,7 @@ module.exports = {
             sql += " order by products.created_at desc limit 20 offset " + (page - 1) * 20;
         } else {
             sql += " where DATE(products.created_at) >= DATE(NOW()) - INTERVAL " + filter + " DAY " +
-                "order by rating/(DATE(NOW()) - DATE(products.created_at)) desc " +
+                "order by rating desc " +
                 "limit 20 offset " + (page - 1) * 20
         }
 
