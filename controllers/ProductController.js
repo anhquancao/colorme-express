@@ -1,7 +1,84 @@
 const pool = require('../config/database');
 const helper = require('../util/helper');
+const transformer = require('../util/Transformer');
+// const db = require('../config/ormDb');
 
 module.exports = {
+    content: function (req, res) {
+        const productId = req.params.product_id;
+        const user_id = req.query.user_id;
+        let sql = "select * from products " +
+            "join users on users.id = products.author_id " +
+            "left join categories on categories.id = products.category_id " +
+            "where products.id = " + productId;
+        // console.log(sql);
+        const options = {sql, nestTables: true};
+        pool.query(options, function (error, rows, fields) {
+            if (error) console.log(error);
+            // console.log(rows);
+            const result = rows[0];
+            // console.log(result);
+
+            let product = result.products;
+
+            let data = Object.assign({}, product, {
+                author: transformer.author(result.users)
+            });
+
+            if (result.categories) {
+                data['category'] = {
+                    name: result.categories.category_name,
+                    id: result.categories.id
+                }
+            }
+
+            pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
+                if (error) return console.log(error);
+                data['likes_count'] = result[0].count;
+                pool.query('select * from products where author_id=' + product.author_id +
+                    " and products.id != " + product.id + " order by RAND() limit 4", function (error, products, fields) {
+                    data['more_products'] = products.map(function (p) {
+                        return Object.assign({}, p, transformer.productType(p));
+                    });
+                    pool.query('select name, username, avatar_url ' +
+                        'from users join likes on ' +
+                        'likes.liker_id = users.id where likes.product_id = ' + productId,
+                        function (error, likers, fields) {
+                            if (error) return console.log(error);
+
+                            data["likers"] = likers;
+
+                            data = Object.assign(data, transformer.productType(product));
+
+
+                            if (user_id) {
+                                pool.query("select count(id) as count from likes where liker_id=" +
+                                    user_id + " and product_id=" + productId, function (error, rows, fields) {
+                                    data['liked'] = rows[0].count > 0;
+                                });
+                            }
+
+                            if (product.type === 2) {
+                                pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
+                                    data['colors'] = colors.map(function (color) {
+                                        return color.value;
+                                    });
+                                    res.json(data);
+                                });
+                            } else {
+                                res.json(data);
+                            }
+
+                        });
+
+
+                });
+            });
+
+
+        });
+
+    },
     comments: function (req, res) {
         const productId = req.params.product_id;
         const userId = req.query.user_id;
@@ -26,7 +103,7 @@ module.exports = {
 
         const options = {sql, nestTables: true};
         pool.query(options, function (error, rows, fields) {
-            if (error) console.log(error);
+            if (error) return console.log(error);
             // console.log(rows);
             res.json({
                 comments: rows.map(function (r) {
@@ -50,7 +127,7 @@ module.exports = {
     products: function (req, res) {
         const sql = 'select * from products order by created_at limit 10 offset 0';
         pool.query(sql, function (error, rows, fields) {
-            if (error) console.log(error);
+            if (error) return console.log(error);
             res.json({
                 products: rows.map(function (r) {
                     return {
