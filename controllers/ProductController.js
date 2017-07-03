@@ -177,6 +177,8 @@ module.exports = {
 
                         if (result[''].comments_count) {
                             data['comments_count'] = result[''].comments_count;
+                        } else {
+                            data['comments_count'] = 0;
                         }
 
                         if (result.groups.id) {
