@@ -46,7 +46,7 @@ module.exports = {
                                 if (error) console.log(error);
                                 res.json({
                                     status: 1,
-                                    status: "Đã thích"
+                                    message: "Đã thích"
                                 });
                             });
                         });
