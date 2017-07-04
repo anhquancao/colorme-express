@@ -7,87 +7,95 @@ module.exports = {
     content: function (req, res) {
         const productId = req.params.product_id;
         const user_id = req.query.user_id;
-        let sql = "select *, (select count(id) from comments where comments.product_id = products.id) as comments_count " +
-            "from products " +
-            "join users on users.id = products.author_id " +
-            "left join categories on categories.id = products.category_id " +
-            "where products.id = " + productId;
-        // console.log(sql);
-        const options = {sql, nestTables: true};
-        pool.query(options, function (error, rows, fields) {
-            if (error) console.log(error);
-            // console.log(rows);
-            const result = rows[0];
-            // console.log(result);
 
-            let product = result.products;
-
-            let data = Object.assign({}, product, {
-                author: transformer.author(result.users)
-            });
-
-            if (result.categories.id) {
-                data['category'] = {
-                    name: result.categories.category_name,
-                    id: result.categories.id
+        pool.query("update products set views = views + 1 where id = " + productId,
+            function (error, rows, fields) {
+                if (error) {
+                    return console.log(error);
                 }
-            }
-            if (result[''].comments_count) {
-                data['comments_count'] = result[''].comments_count;
-            }
-
-            pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
-                if (error) return console.log(error);
-                data['likes_count'] = result[0].count;
-                const sql = 'select * from products ' +
-                    'join users on users.id = products.author_id where author_id=' + product.author_id +
-                    " and products.id != " + product.id + " order by RAND() limit 4";
+                let sql = "select *, (select count(id) from comments where comments.product_id = products.id) as comments_count " +
+                    "from products " +
+                    "join users on users.id = products.author_id " +
+                    "left join categories on categories.id = products.category_id " +
+                    "where products.id = " + productId;
+                // console.log(sql);
                 const options = {sql, nestTables: true};
-                pool.query(options, function (error, result, fields) {
-                    if (error) return console.log(error);
+                pool.query(options, function (error, rows, fields) {
+                    if (error) console.log(error);
+                    // console.log(rows);
+                    const result = rows[0];
+                    // console.log(result);
 
-                    data['more_products'] = result.map(function (r) {
+                    let product = result.products;
 
-                        const p = Object.assign({}, r.products, transformer.productType(r.products));
-                        return Object.assign({}, p, {author: transformer.author(r.users)});
+                    let data = Object.assign({}, product, {
+                        author: transformer.author(result.users)
                     });
-                    pool.query('select name, username, avatar_url ' +
-                        'from users join likes on ' +
-                        'likes.liker_id = users.id where likes.product_id = ' + productId,
-                        function (error, likers, fields) {
+
+                    if (result.categories.id) {
+                        data['category'] = {
+                            name: result.categories.category_name,
+                            id: result.categories.id
+                        }
+                    }
+                    if (result[''].comments_count) {
+                        data['comments_count'] = result[''].comments_count;
+                    }
+
+                    pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
+                        if (error) return console.log(error);
+                        data['likes_count'] = result[0].count;
+                        const sql = 'select * from products ' +
+                            'join users on users.id = products.author_id where author_id=' + product.author_id +
+                            " and products.id != " + product.id + " order by RAND() limit 4";
+                        const options = {sql, nestTables: true};
+                        pool.query(options, function (error, result, fields) {
                             if (error) return console.log(error);
 
-                            data["likers"] = likers;
+                            data['more_products'] = result.map(function (r) {
 
-                            data = Object.assign(data, transformer.productType(product));
+                                const p = Object.assign({}, r.products, transformer.productType(r.products));
+                                return Object.assign({}, p, {author: transformer.author(r.users)});
+                            });
+                            pool.query('select name, username, avatar_url ' +
+                                'from users join likes on ' +
+                                'likes.liker_id = users.id where likes.product_id = ' + productId,
+                                function (error, likers, fields) {
+                                    if (error) return console.log(error);
+
+                                    data["likers"] = likers;
+
+                                    data = Object.assign(data, transformer.productType(product));
 
 
-                            if (user_id) {
-                                pool.query("select count(id) as count from likes where liker_id=" +
-                                    user_id + " and product_id=" + productId, function (error, rows, fields) {
-                                    data['liked'] = rows[0].count > 0;
+                                    if (user_id) {
+                                        pool.query("select count(id) as count from likes where liker_id=" +
+                                            user_id + " and product_id=" + productId, function (error, rows, fields) {
+                                            data['liked'] = rows[0].count > 0;
+                                        });
+                                    }
+
+                                    if (product.type === 2) {
+                                        pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
+                                            data['colors'] = colors.map(function (color) {
+                                                return color.value;
+                                            });
+                                            res.json(data);
+                                        });
+                                    } else {
+                                        res.json(data);
+                                    }
+
                                 });
-                            }
 
-                            if (product.type === 2) {
-                                pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
-                                    data['colors'] = colors.map(function (color) {
-                                        return color.value;
-                                    });
-                                    res.json(data);
-                                });
-                            } else {
-                                res.json(data);
-                            }
 
                         });
+                    });
 
 
                 });
-            });
-
-
         });
+
 
     },
     comments: function (req, res) {
