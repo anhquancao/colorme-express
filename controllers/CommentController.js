@@ -26,7 +26,7 @@ module.exports = {
                                     if (error) console.log(error);
                                     res.json({
                                         status: 1,
-                                        message: "Bỏ like thành công"
+                                        message: "Đã bỏ thích"
                                     });
                                 });
 
@@ -46,7 +46,7 @@ module.exports = {
                                 if (error) console.log(error);
                                 res.json({
                                     status: 1,
-                                    insert_id: result.insertId
+                                    status: "Đã thích"
                                 });
                             });
                         });
