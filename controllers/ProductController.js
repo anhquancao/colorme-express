@@ -113,24 +113,48 @@ module.exports = {
             " where product_id = " + productId;
 
         const options = {sql, nestTables: true};
-        pool.query(options, function (error, rows, fields) {
-            if (error) return console.log(error);
-            // console.log(rows);
-            res.json({
-                comments: rows.map(function (r) {
-                    return Object.assign({}, r.comments, {
-                        liked: r[''] && r[''].comment_likes === 1,
-                        commenter: Object.assign({}, r.users, {
-                            url: process.env.BASE_URL + "profile/" + r.users.username
-                        }),
-                        created_at: helper.timeSince(Date.parse(r.comments.created_at)),
-                        product: {
-                            author: {
-                                id: r.products.author_id
-                            }
-                        }
-                    })
-                })
+        let promises = [];
+        const promise = new Promise(function (resolve, reject) {
+            pool.query(options, function (error, rows, fields) {
+                if (error) return console.log(error);
+                // console.log(rows);
+
+
+                rows.forEach(function (r) {
+                    const commentLikesPromise = new Promise(function (resolve, reject) {
+                        let sql = 'select users.name from comment_likes ' +
+                            'join users on comment_likes.user_id = users.id ' +
+                            'where comment_likes.comment_id = ' + r.comments.id;
+                        pool.query(
+                            sql,
+                            function (error, result, fields) {
+                                if (error) return console.log(error);
+                                const comment = Object.assign({}, r.comments, {
+                                    liked: r[''] && r[''].comment_likes === 1,
+                                    commenter: Object.assign({}, r.users, {
+                                        url: process.env.BASE_URL + "profile/" + r.users.username
+                                    }),
+                                    created_at: helper.timeSince(Date.parse(r.comments.created_at)),
+                                    product: {
+                                        author: {
+                                            id: r.products.author_id
+                                        }
+                                    },
+                                    likers: result
+                                });
+                                resolve(comment);
+                            });
+                    });
+                    promises.push(commentLikesPromise);
+                });
+
+                resolve(true);
+            });
+        });
+
+        promise.then(function () {
+            Promise.all(promises).then(function (comments) {
+                res.json({comments});
             });
         });
 

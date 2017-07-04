@@ -31,7 +31,7 @@
       <file leaf-file-name="CommentController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/CommentController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
+            <state relative-caret-position="645">
               <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding />
             </state>
@@ -48,21 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/comment.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="61" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProductController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/ProductController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="177" column="47" lean-forward="false" selection-start-line="177" selection-start-column="47" selection-end-line="177" selection-end-column="47" />
+            <state relative-caret-position="155">
+              <caret line="127" column="35" lean-forward="true" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -150,6 +140,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
@@ -373,12 +364,12 @@
       <workItem from="1498885361612" duration="1014000" />
       <workItem from="1498886988540" duration="22000" />
       <workItem from="1498892764742" duration="10131000" />
-      <workItem from="1498921419442" duration="22614000" />
+      <workItem from="1498921419442" duration="25396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40759000" />
+    <option name="totallyTimeSpent" value="43541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,7 +381,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="1" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13820492" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -734,22 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/comment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="61" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -806,9 +781,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/CommentController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
+        <state relative-caret-position="645">
           <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
           <folding />
         </state>
@@ -816,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ProductController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="177" column="47" lean-forward="false" selection-start-line="177" selection-start-column="47" selection-end-line="177" selection-end-column="47" />
+        <state relative-caret-position="155">
+          <caret line="127" column="35" lean-forward="true" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
           <folding />
         </state>
       </provider>
