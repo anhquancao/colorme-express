@@ -175,6 +175,8 @@ module.exports = {
                             author: transformer.author(result.users)
                         });
 
+                        data['content'] = null;
+
                         if (result[''].comments_count) {
                             data['comments_count'] = result[''].comments_count;
                         } else {
