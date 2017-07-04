@@ -31,6 +31,15 @@ module.exports = {
                     let data = Object.assign({}, product, {
                         author: transformer.author(result.users)
                     });
+                    if (product.tags) {
+                        if (product.tags.indexOf(',') !== -1) {
+                            data['tags'] = product.tags.split(',');
+                        } else {
+                            data['tags'] = [product.tags];
+                        }
+
+                    }
+
 
                     if (result.categories.id) {
                         data['category'] = {
