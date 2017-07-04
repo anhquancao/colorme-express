@@ -149,7 +149,8 @@ module.exports = {
                                 const comment = Object.assign({}, r.comments, {
                                     liked: r[''] && r[''].comment_likes === 1,
                                     commenter: Object.assign({}, r.users, {
-                                        url: process.env.BASE_URL + "profile/" + r.users.username
+                                        url: process.env.BASE_URL + "profile/" + r.users.username,
+                                        avatar_url: r.users.avatar_url ? r.users.avatar_url : 'http://d1j8r0kxyu9tj8.cloudfront.net/user.png'
                                     }),
                                     created_at: helper.timeSince(Date.parse(r.comments.created_at)),
                                     product: {
@@ -157,8 +158,7 @@ module.exports = {
                                             id: r.products.author_id
                                         }
                                     },
-                                    likers: result,
-                                    avatar_url: r.users.avatar_url ? r.users.avatar_url : 'http://d1j8r0kxyu9tj8.cloudfront.net/user.png'
+                                    likers: result
                                 });
                                 resolve(comment);
                             });
