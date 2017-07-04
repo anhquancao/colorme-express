@@ -103,7 +103,7 @@ module.exports = {
 
 
                 });
-        });
+            });
 
 
     },
@@ -157,7 +157,8 @@ module.exports = {
                                             id: r.products.author_id
                                         }
                                     },
-                                    likers: result
+                                    likers: result,
+                                    avatar_url: r.users.avatar_url ? r.users.avatar_url : 'http://d1j8r0kxyu9tj8.cloudfront.net/user.png'
                                 });
                                 resolve(comment);
                             });
