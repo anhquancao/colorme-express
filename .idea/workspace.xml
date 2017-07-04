@@ -30,8 +30,8 @@
       <file leaf-file-name="CommentController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/CommentController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="48" column="45" lean-forward="false" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+            <state relative-caret-position="182">
+              <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -363,12 +363,12 @@
       <workItem from="1498885361612" duration="1014000" />
       <workItem from="1498886988540" duration="22000" />
       <workItem from="1498892764742" duration="10131000" />
-      <workItem from="1498921419442" duration="25787000" />
+      <workItem from="1498921419442" duration="25895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43932000" />
+    <option name="totallyTimeSpent" value="44040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/CommentController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="48" column="45" lean-forward="false" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+        <state relative-caret-position="182">
+          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
           <folding />
         </state>
       </provider>

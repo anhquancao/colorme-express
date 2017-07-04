@@ -33,7 +33,7 @@ module.exports = {
                             } else {
                                 res.json({
                                     status: 0,
-                                    message: "Không bỏ like được"
+                                    message: "Không bỏ thích được"
                                 });
                             }
                         });
