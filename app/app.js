@@ -14,7 +14,7 @@ const origins = [
     "http://manage.colorme.vn",
     "http://beta.colorme.vn",
     "http://colorme.dev",
-    "http://phanmduong.ml/"
+    "http://phanmduong.ml"
 ];
 const app = express();
 
