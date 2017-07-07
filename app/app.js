@@ -4,6 +4,7 @@ const productsRouter = require('../routes/products');
 const publicRouter = require('../routes/public');
 const bodyParser = require('body-parser');
 const commentRouter = require('../routes/comment');
+const studentRouter = require('../routes/students');
 
 
 const origins = [
@@ -42,6 +43,7 @@ app.use(function (req, res, next) {
 app.use('/products', productsRouter);
 app.use('/public', publicRouter);
 app.use('/comment', commentRouter);
+app.use('/students', studentRouter);
 
 const port = process.env.PORT || 8080;
 
