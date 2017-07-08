@@ -5,6 +5,7 @@ module.exports = {
     paidStudent: (req, res) => {
         const genId = req.params.gen_id;
         const filter = req.params.filter;
+
         let sql = 'select registers.code,' +
             'registers.money,' +
             'registers.id as register_id, ' +
@@ -14,8 +15,14 @@ module.exports = {
             'users.phone as phone,' +
             'users.avatar_url as avatar_url, ' +
             'users.email as email ' +
-            'from registers join users on users.id = registers.user_id ' +
-            'where registers.gen_id =' + genId;
+            'from registers join users on users.id = registers.user_id ';
+
+        if (req.query.base_id) {
+            sql += " join classes on classes.id = registers.class_id " +
+                " and classes.base_id = " + req.query.base_id + " and registers.gen_id =" + genId;
+        } else {
+            sql += 'where registers.gen_id =' + genId;
+        }
         switch (filter) {
             case 'paid':
                 sql += ' and registers.money > 0';
