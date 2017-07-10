@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const commentRouter = require('../routes/comment');
 const studentRouter = require('../routes/students');
 
+// require('../config/aws');
+
 
 const origins = [
     "http://localhost:3000",
