@@ -1,12 +1,16 @@
 const express = require('express');
-require('dotenv').config();
+require('dotenv').config({path: './env/.env'});
+
+
+
 const productsRouter = require('../routes/products');
 const publicRouter = require('../routes/public');
 const bodyParser = require('body-parser');
 const commentRouter = require('../routes/comment');
 const studentRouter = require('../routes/students');
+const imageRouter = require('../routes/image');
 
-// require('../config/aws');
+require('../config/aws');
 
 
 const origins = [
@@ -47,6 +51,7 @@ app.use('/products', productsRouter);
 app.use('/public', publicRouter);
 app.use('/comment', commentRouter);
 app.use('/students', studentRouter);
+app.use('/images', imageRouter);
 
 const port = process.env.PORT || 8080;
 

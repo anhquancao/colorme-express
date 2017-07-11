@@ -1,6 +1,10 @@
 const AWS = require('aws-sdk');
-const myCredentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'IDENTITY_POOL_ID'});
-const myConfig = new AWS.Config({
-    credentials: myCredentials,
-    region: 'ap-southeast-1'
+AWS.config.loadFromPath('./env/awsCredential.json');
+
+const s3 = new AWS.S3({
+    params: {Bucket: process.env.S3_BUCKET}
 });
+
+module.exports = {
+    S3: s3
+};
