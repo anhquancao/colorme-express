@@ -14,6 +14,7 @@ module.exports = {
             ContentType: file.mimetype,
             ACL: 'public-read'
         }, function (err, data) {
+            fs.unlink(file.path);
             if (err) {
                 return console.log(err);
             }

@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/env/awsCredential.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/17d8ddcf9de0bd872a2be2ca3058a512" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/20d101e24f2e5520607755c838d920c4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/3b25567ef5856b486d0243083ec75c0e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/63f22e5d431d30ec44731ce983d929d1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/674d3c3f779b21f022a064cd08b97ece" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/73da2d970e24911ee195073bb3eae19d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/75fd5418f21509728176661e126fbf6a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/784d7502d19a2d1b6bb94f7944a15182" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/8ef4ba33ee369038040ad060c87b9bc9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/a6eaac7963f5fa166fd0c7b8c87586f4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/ba21bca7c964d1ed50d0aefea9ce6b7e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/c4224e6f1e48ce9ee51c2d8fadd0deb7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/eb253950b85f741ed6218de044b94689" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/f2fd071d1f96e3efa56294857bd53b26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/f317f75237c07e8c4b4c17bc9b5540e1" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/aws.js" afterPath="$PROJECT_DIR$/config/aws.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ImageController.js" afterPath="$PROJECT_DIR$/controllers/ImageController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,8 +56,8 @@
       <file leaf-file-name="ImageController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/ImageController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="311">
+              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -445,12 +454,12 @@
       <workItem from="1499566334797" duration="1124000" />
       <workItem from="1499685300713" duration="1176000" />
       <workItem from="1499698736031" duration="1934000" />
-      <workItem from="1499764592594" duration="4640000" />
+      <workItem from="1499764592594" duration="4810000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63242000" />
+    <option name="totallyTimeSpent" value="63412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,9 +472,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17077045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17077045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -860,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ImageController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        <state relative-caret-position="311">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
           <folding />
         </state>
       </provider>
