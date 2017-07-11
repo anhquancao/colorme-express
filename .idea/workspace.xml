@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/17d8ddcf9de0bd872a2be2ca3058a512" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/20d101e24f2e5520607755c838d920c4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/3b25567ef5856b486d0243083ec75c0e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/63f22e5d431d30ec44731ce983d929d1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/674d3c3f779b21f022a064cd08b97ece" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/73da2d970e24911ee195073bb3eae19d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/75fd5418f21509728176661e126fbf6a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/784d7502d19a2d1b6bb94f7944a15182" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/8ef4ba33ee369038040ad060c87b9bc9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/a6eaac7963f5fa166fd0c7b8c87586f4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/ba21bca7c964d1ed50d0aefea9ce6b7e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/c4224e6f1e48ce9ee51c2d8fadd0deb7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/eb253950b85f741ed6218de044b94689" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/f2fd071d1f96e3efa56294857bd53b26" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/f317f75237c07e8c4b4c17bc9b5540e1" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ImageController.js" afterPath="$PROJECT_DIR$/controllers/ImageController.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -454,12 +438,12 @@
       <workItem from="1499566334797" duration="1124000" />
       <workItem from="1499685300713" duration="1176000" />
       <workItem from="1499698736031" duration="1934000" />
-      <workItem from="1499764592594" duration="4810000" />
+      <workItem from="1499764592594" duration="4887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63412000" />
+    <option name="totallyTimeSpent" value="63489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
