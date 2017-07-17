@@ -116,7 +116,8 @@ module.exports = {
             sql += "(select count(id) from comment_likes " +
                 "where user_id = " + userId + " and comment_id = comments.id) as comment_likes,";
         }
-        sql += "comments.content as content, " +
+        sql += "comments.content as content," +
+            "comments.image_url as image_url, " +
             "comments.likes as likes, " +
             "comments.created_at as created_at," +
             "users.avatar_url, " +

@@ -39,7 +39,10 @@ module.exports = {
                     }
                     res.json({
                         status: 1,
-                        data: Object.assign({}, data, {url: process.env.S3_URL + "/" + photoKey})
+                        data: Object.assign({}, data, {
+                            photo_key: photoKey,
+                            url: process.env.S3_URL + "/" + photoKey
+                        })
                     });
                 });
             })
