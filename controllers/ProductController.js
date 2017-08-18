@@ -155,8 +155,6 @@ module.exports = {
                                         avatar_url: r.users.avatar_url ? r.users.avatar_url : 'http://d1j8r0kxyu9tj8.cloudfront.net/user.png'
                                     }),
                                     created_at: helper.timeSince(Date.parse(r.comments.created_at)),
-                                    created_at1: Date.parse(r.comments.created_at),
-                                    date: new Date(),
                                     product: {
                                         author: {
                                             id: r.products.author_id
