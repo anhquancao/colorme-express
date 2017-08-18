@@ -156,6 +156,7 @@ module.exports = {
                                     }),
                                     created_at: helper.timeSince(Date.parse(r.comments.created_at)),
                                     created_at1: Date.parse(r.comments.created_at),
+                                    date: new Date(),
                                     product: {
                                         author: {
                                             id: r.products.author_id
