@@ -154,7 +154,8 @@ module.exports = {
                                         url: process.env.BASE_URL + "profile/" + r.users.username,
                                         avatar_url: r.users.avatar_url ? r.users.avatar_url : 'http://d1j8r0kxyu9tj8.cloudfront.net/user.png'
                                     }),
-                                    created_at: helper.timeSince(Date.parse(r.comments.created_at)),
+                                    // created_at: helper.timeSince(Date.parse(r.comments.created_at)),
+                                    created_at: r.comments.created_at,
                                     product: {
                                         author: {
                                             id: r.products.author_id
