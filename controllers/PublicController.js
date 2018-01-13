@@ -8,7 +8,7 @@ module.exports = {
         pool.query(basesSql, function (error, bases, fields) {
             if (error) throw error;
             const coursesSql = 'select image_url as avatar_url, description, duration, icon_url, id, name, price ' +
-                'from courses order by created_at';
+                'from courses where status = 1 order by created_at';
 
             pool.query(coursesSql, (error, courses, fields) => {
                 if (error) throw error;
