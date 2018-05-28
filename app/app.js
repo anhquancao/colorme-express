@@ -21,7 +21,8 @@ const origins = [
     "http://beta.colorme.vn",
     "http://colorme.dev",
     "http://phanmduong.ml",
-    "http://keetool.xyz"
+    "http://keetool.xyz",
+    "http://keetoolclient.test",
 ];
 const app = express();
 
