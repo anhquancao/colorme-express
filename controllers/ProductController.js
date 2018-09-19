@@ -86,7 +86,7 @@ module.exports = {
                                         });
                                     }
 
-                                    data['content1'] = product.content.replace('/on\\w+="[^"]*"/g', '');
+                                    data['content'] = product.content.replace(/on\w+="[^"]*"/g, '');
 
                                     if (product.type === 2) {
                                         pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
