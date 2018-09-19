@@ -52,7 +52,6 @@ module.exports = {
                     }
 
 
-
                     pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
                         if (error) return console.log(error);
                         data['likes_count'] = result[0].count;
@@ -86,7 +85,8 @@ module.exports = {
                                         });
                                     }
 
-                                    data['content'] = product.content.replace(/on\w+="[^"]*"/g, '');
+                                    data['content'] = product.content.replace(/on\w+="[^"]*"/g, '')
+                                        .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/g, '');
 
                                     if (product.type === 2) {
                                         pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
