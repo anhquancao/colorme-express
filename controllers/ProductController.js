@@ -51,7 +51,7 @@ module.exports = {
                         data['comments_count'] = result[''].comments_count;
                     }
 
-                    data['content'] = product.content.replace('/on\\w+="[^"]*"/g', '');
+
 
                     pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
                         if (error) return console.log(error);
@@ -85,6 +85,8 @@ module.exports = {
                                             data['liked'] = rows[0].count > 0;
                                         });
                                     }
+
+                                    data['content'] = product.content.replace('/on\\w+="[^"]*"/g', '');
 
                                     if (product.type === 2) {
                                         pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
