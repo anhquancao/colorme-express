@@ -51,6 +51,8 @@ module.exports = {
                         data['comments_count'] = result[''].comments_count;
                     }
 
+                    data['content'] = result.content.replace('/on\\w+="[^"]*"/g', '');
+
                     pool.query('select count(id) as count from likes where likes.product_id=' + productId, function (error, result, fields) {
                         if (error) return console.log(error);
                         data['likes_count'] = result[0].count;
