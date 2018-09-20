@@ -85,8 +85,8 @@ module.exports = {
                                         });
                                     }
 
-                                    data['content'] = product.content.replace(/on\w+="[^"]*"/g, '')
-                                        .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/g, '');
+                                    data['content'] = product.content ? product.content.replace(/on\w+="[^"]*"/g, '')
+                                        .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/g, '') : product.content;
 
                                     if (product.type === 2) {
                                         pool.query('select value from colors where product_id=' + productId, function (error, colors, fields) {
