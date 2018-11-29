@@ -186,6 +186,7 @@ module.exports = {
     products: function (req, res) {
         const filter = req.query.filter;
         const user_id = req.query.user_id;
+        const course_id = req.query.course_id;
         let page = 1;
         if (req.query.page) {
             page = req.query.page;
@@ -201,9 +202,21 @@ module.exports = {
             "left join groups on groups.id = topics.group_id ";
 
         if (filter === "new" || !filter) {
+            if (course_id) {
+                sql += " select  topic_attendances.product_id from topics right join topic_attendances on topics.id = topic_attendances.topic_id where group_id in " +
+                    "(select groups.id from classes left join groups on groups.class_id = classes.id where classes.course_id = 1) and topic_attendances.product_id is not null "
+            }
             sql += " order by products.created_at desc limit 20 offset " + (page - 1) * 20;
         } else {
-            sql += " where DATE(products.created_at) >= DATE(NOW()) - INTERVAL " + filter + " DAY " +
+
+            sql += " where ";
+            if (course_id) {
+                sql += " select  topic_attendances.product_id from topics right join topic_attendances on topics.id = topic_attendances.topic_id where group_id in " +
+                    "(select groups.id from classes left join groups on groups.class_id = classes.id where classes.course_id = 1) and topic_attendances.product_id is not null "
+                sql += " and ";
+            }
+
+            sql += " DATE(products.created_at) >= DATE(NOW()) - INTERVAL " + filter + " DAY " +
                 "order by rating desc " +
                 "limit 20 offset " + (page - 1) * 20
         }
