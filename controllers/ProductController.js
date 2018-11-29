@@ -203,16 +203,26 @@ module.exports = {
 
         if (filter === "new" || !filter) {
             if (course_id) {
-                sql += " select  topic_attendances.product_id from topics right join topic_attendances on topics.id = topic_attendances.topic_id where group_id in " +
-                    "(select groups.id from classes left join groups on groups.class_id = classes.id where classes.course_id = 1) and topic_attendances.product_id is not null "
+                sql += "products.id in " +
+                    "(select topic_attendances.product_id from topics " +
+                    "right join topic_attendances on topics.id = topic_attendances.topic_id " +
+                    "where group_id in " +
+                    "(select groups.id from classes " +
+                    "left join groups on groups.class_id = classes.id " +
+                    "where classes.course_id = " + course_id + ") and topic_attendances.product_id is not null) "
             }
             sql += " order by products.created_at desc limit 20 offset " + (page - 1) * 20;
         } else {
 
             sql += " where ";
             if (course_id) {
-                sql += " select  topic_attendances.product_id from topics right join topic_attendances on topics.id = topic_attendances.topic_id where group_id in " +
-                    "(select groups.id from classes left join groups on groups.class_id = classes.id where classes.course_id = 1) and topic_attendances.product_id is not null "
+                sql += "products.id in " +
+                    "(select topic_attendances.product_id from topics " +
+                    "right join topic_attendances on topics.id = topic_attendances.topic_id " +
+                    "where group_id in " +
+                    "(select groups.id from classes " +
+                    "left join groups on groups.class_id = classes.id " +
+                    "where classes.course_id = " + course_id + ") and topic_attendances.product_id is not null) "
                 sql += " and ";
             }
 
