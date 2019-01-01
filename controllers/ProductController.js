@@ -215,7 +215,7 @@ module.exports = {
         } else {
 
             sql += " where ";
-            sql += "products.created_at is null and ";
+            sql += "products.deleted_at is null and ";
             if (course_id) {
                 sql += "products.id in " +
                     "(select topic_attendances.product_id from topics " +
