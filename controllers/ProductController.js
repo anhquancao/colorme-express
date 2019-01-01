@@ -211,11 +211,12 @@ module.exports = {
                     "left join groups on groups.class_id = classes.id " +
                     "where classes.course_id = " + course_id + ") and topic_attendances.product_id is not null) "
             }
+            sql += " products.deleted_at is NULL and ";
             sql += " order by products.created_at desc limit 20 offset " + (page - 1) * 20;
         } else {
 
             sql += " where ";
-            sql += "products.deleted_at is null and ";
+            sql += " products.deleted_at is NULL and ";
             if (course_id) {
                 sql += "products.id in " +
                     "(select topic_attendances.product_id from topics " +
