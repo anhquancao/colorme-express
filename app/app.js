@@ -2,13 +2,13 @@ const express = require('express');
 require('dotenv').config({path: './env/.env'});
 
 
-
 const productsRouter = require('../routes/products');
 const publicRouter = require('../routes/public');
 const bodyParser = require('body-parser');
 const commentRouter = require('../routes/comment');
 const studentRouter = require('../routes/students');
 const imageRouter = require('../routes/image');
+const videoRouter = require('../routes/video');
 
 require('../config/aws');
 
@@ -24,6 +24,7 @@ const origins = [
     "http://keetool.xyz",
     "http://keetoolclient.test",
 ];
+
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -54,6 +55,7 @@ app.use('/public', publicRouter);
 app.use('/comment', commentRouter);
 app.use('/students', studentRouter);
 app.use('/images', imageRouter);
+app.use('/video', videoRouter);
 
 const port = process.env.PORT || 8080;
 

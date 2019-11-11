@@ -212,7 +212,7 @@ module.exports = {
                     "where classes.course_id = " + course_id + ") and topic_attendances.product_id is not null) "
             }
             sql += " and products.deleted_at is NULL ";
-            sql += " order by products.created_at desc limit 20 offset " + (page - 1) * 20;
+            sql += " order by products.created_at desc limit 12 offset " + (page - 1) * 12;
         } else {
 
             sql += " where ";
@@ -230,7 +230,7 @@ module.exports = {
 
             sql += " DATE(products.created_at) >= DATE(NOW()) - INTERVAL " + filter + " DAY " +
                 "order by rating desc " +
-                "limit 20 offset " + (page - 1) * 20
+                "limit 12 offset " + (page - 1) * 12
         }
 
         let promiseArray = [];
