@@ -1,6 +1,6 @@
 const express = require('express');
 require('dotenv').config({path: './env/.env'});
-
+var fileUpload = require('express-fileupload');
 
 const productsRouter = require('../routes/products');
 const publicRouter = require('../routes/public');
@@ -29,6 +29,9 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(fileUpload({
+    createParentPath: true,
+}));
 
 // Add headers
 app.use(function (req, res, next) {
