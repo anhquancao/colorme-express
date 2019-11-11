@@ -49,9 +49,9 @@ router.post('/upload', function (req, res, next) {
             function (bytesUploaded, bytesTotal) {
                 var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2)
                 console.log(bytesUploaded, bytesTotal, percentage + '%')
-                if (socket) {
-                    socket.emit("video-upload", {percent: percentage})
-                }
+                // if (socket) {
+                //     socket.emit("video-upload", {percent: percentage})
+                // }
             },
             function (error) {
                 console.log('Failed because: ' + error)
