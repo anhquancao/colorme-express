@@ -4,18 +4,18 @@ var Vimeo = require('vimeo').Vimeo;
 var path = require('path');
 const uuidv4 = require('uuid/v4');
 const fs = require('fs');
-var socketio = require('../socketio');
+// var socketio = require('.socketio');
 
 var client = new Vimeo(process.env.VIMEO_CLIENT, process.env.VIMEO_SECRET, process.env.VIMEO_ACCESS);
 /* GET home page. */
 router.post('/upload', function (req, res, next) {
-    var io = socketio.getSocketIO();
-    var ns = io.of("/");
-    var socket;
-    if (ns && ns.connected) {
-        socket = ns.connected[req.body.socket_id];
-    }
-    console.log();
+    // var io = socketio.getSocketIO();
+    // var ns = io.of("/");
+    // var socket;
+    // if (ns && ns.connected) {
+    //     socket = ns.connected[req.body.socket_id];
+    // }
+    // console.log();
     const file_extension = req.body.file_extension;
     if (!file_extension)
         return res.status(500).send("error: file_extension");
