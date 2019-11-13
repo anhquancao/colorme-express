@@ -16,15 +16,12 @@ router.post('/upload', function (req, res, next) {
     //     socket = ns.connected[req.body.socket_id];
     // }
     // console.log();
-    const file_extension = req.body.file_extension;
-    if (!file_extension)
-        return res.status(500).send("error: file_extension");
 
     if (!req.files.video)
         return res.status(500).send("error: video");
 
     const file_name = uuidv4();
-    const file_path = "video/" + file_name + '.' + file_extension;
+    const file_path = "video/" + file_name + '_' + req.body.file_name;
 
 
     req.files.video.mv(file_path, function (err) {
