@@ -7,7 +7,7 @@ module.exports = {
             'from bases order by created_at';
         pool.query(basesSql, function (error, bases, fields) {
             if (error) throw error;
-            const coursesSql = 'select image_url as avatar_url, description, duration, icon_url, id, name, price ' +
+            const coursesSql = 'select image_url as avatar_url, description, duration, icon_url,icon_name, id, name, price ' +
                 'from courses where status = 1  and icon_name != \'\' order by created_at';
 
             pool.query(coursesSql, (error, courses, fields) => {
