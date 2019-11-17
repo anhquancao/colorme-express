@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PublicController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PublicController.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +42,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/env/awsCredential.json&#10;/Users/caoquan/WebstormProjects/colorme-express/.env" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
@@ -127,6 +128,7 @@
       <workItem from="1573491801150" duration="2590000" />
       <workItem from="1573536016272" duration="2520000" />
       <workItem from="1573646959898" duration="388000" />
+      <workItem from="1573995522559" duration="1640000" />
     </task>
     <servers />
   </component>
