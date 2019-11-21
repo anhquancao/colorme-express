@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,7 +130,7 @@
       <workItem from="1573646959898" duration="388000" />
       <workItem from="1573995522559" duration="6067000" />
       <workItem from="1574134350711" duration="599000" />
-      <workItem from="1574326329399" duration="701000" />
+      <workItem from="1574326329399" duration="1440000" />
     </task>
     <task id="LOCAL-00001" summary="Course home info">
       <created>1574000192701</created>
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574327025141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Course home info">
+      <created>1574327171018</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574327171018</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

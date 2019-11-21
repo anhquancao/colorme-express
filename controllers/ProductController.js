@@ -202,6 +202,7 @@ module.exports = {
             "left join groups on groups.id = topics.group_id ";
 
         if (filter === "new" || !filter) {
+            sql += " where ";
             if (course_id) {
                 sql += "products.id in " +
                     "(select topic_attendances.product_id from topics " +
@@ -211,7 +212,7 @@ module.exports = {
                     "left join groups on groups.class_id = classes.id " +
                     "where classes.course_id = " + course_id + ") and topic_attendances.product_id is not null) "
             }
-            sql += " and products.deleted_at is NULL  and DATE(products.created_at) >= DATE(NOW()) - INTERVAL 7 DAY";
+            sql += " and products.deleted_at is NULL  and DATE(products.created_at) >= DATE(NOW()) - INTERVAL 7 DAY ";
             sql += " order by products.created_at desc limit 12 offset " + (page - 1) * 12;
         } else {
 
