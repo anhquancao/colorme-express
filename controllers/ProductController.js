@@ -329,7 +329,7 @@ module.exports = {
 
         promise1.then(function () {
             Promise.all(promiseArray).then(function (products) {
-                res.json({products});
+                res.json({products, query: sql});
             }, function (err) {
                 console.log(err);
             });

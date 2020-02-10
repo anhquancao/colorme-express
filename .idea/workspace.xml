@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +36,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -53,18 +60,6 @@
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/controllers" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="js.build_tools.gulp">
@@ -130,6 +125,7 @@
       <workItem from="1574134350711" duration="599000" />
       <workItem from="1574326329399" duration="1440000" />
       <workItem from="1574406581125" duration="365000" />
+      <workItem from="1581333843083" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="Course home info">
       <created>1574000192701</created>
@@ -166,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574327171018</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Course home info">
+      <created>1581333903854</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581333903854</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +193,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Course home info" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1640" y="535" width="840" height="814" key="CommitChangelistDialog2" timestamp="1581333903777">
+      <screen x="1080" y="224" width="2560" height="1440" />
+    </state>
+    <state x="1640" y="535" width="840" height="814" key="CommitChangelistDialog2/1080.224.2560.1440/0.251.1080.1376@1080.224.2560.1440" timestamp="1581333903777" />
+    <state x="1660" y="675" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1581333905156">
+      <screen x="1080" y="224" width="2560" height="1440" />
+    </state>
+    <state x="1660" y="675" width="800" height="535" key="Vcs.Push.Dialog.v2/1080.224.2560.1440/0.251.1080.1376@1080.224.2560.1440" timestamp="1581333905156" />
     <state x="1833" y="859" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581333844123">
       <screen x="1080" y="224" width="2560" height="1440" />
     </state>
