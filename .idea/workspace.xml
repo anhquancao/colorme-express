@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.js" afterDir="false" />
-    </list>
+    <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -131,6 +129,7 @@
       <workItem from="1573995522559" duration="6067000" />
       <workItem from="1574134350711" duration="599000" />
       <workItem from="1574326329399" duration="1440000" />
+      <workItem from="1574406581125" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="Course home info">
       <created>1574000192701</created>
@@ -189,6 +188,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Course home info" />
     <option name="LAST_COMMIT_MESSAGE" value="Course home info" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1833" y="859" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581333844123">
+      <screen x="1080" y="224" width="2560" height="1440" />
+    </state>
+    <state x="1833" y="859" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1080.224.2560.1440/0.251.1080.1376@1080.224.2560.1440" timestamp="1581333844123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
