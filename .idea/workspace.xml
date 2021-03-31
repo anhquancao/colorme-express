@@ -4,6 +4,9 @@
     <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,30 +29,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <annotation-enable>false</annotation-enable>
-    <other-services-enabled>true</other-services-enabled>
-  </component>
   <component name="ProjectId" id="1TTl7WBebAgVGsQgXRSTinOyVqn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/env/awsCredential.json&#10;/Users/caoquan/WebstormProjects/colorme-express/.env" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -72,6 +71,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -126,6 +126,7 @@
       <workItem from="1574326329399" duration="1440000" />
       <workItem from="1574406581125" duration="365000" />
       <workItem from="1581333843083" duration="457000" />
+      <workItem from="1617176134765" duration="3323000" />
     </task>
     <task id="LOCAL-00001" summary="Course home info">
       <created>1574000192701</created>
@@ -180,38 +181,23 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Course home info" />
     <option name="LAST_COMMIT_MESSAGE" value="Course home info" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1640" y="535" width="840" height="814" key="CommitChangelistDialog2" timestamp="1581334124192">
-      <screen x="1080" y="224" width="2560" height="1440" />
-    </state>
-    <state x="1640" y="535" width="840" height="814" key="CommitChangelistDialog2/1080.224.2560.1440/0.251.1080.1376@1080.224.2560.1440" timestamp="1581334124192" />
-    <state x="1660" y="675" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1581334125521">
-      <screen x="1080" y="224" width="2560" height="1440" />
-    </state>
-    <state x="1660" y="675" width="800" height="535" key="Vcs.Push.Dialog.v2/1080.224.2560.1440/0.251.1080.1376@1080.224.2560.1440" timestamp="1581334125521" />
-    <state x="1833" y="859" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581333844123">
-      <screen x="1080" y="224" width="2560" height="1440" />
-    </state>
-    <state x="1833" y="859" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1080.224.2560.1440/0.251.1080.1376@1080.224.2560.1440" timestamp="1581333844123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -221,5 +207,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -337,4 +337,142 @@ module.exports = {
 
 
     },
+    test: function (req, res) {
+        const start_time = req.query.start_time;
+        const end_time = req.query.end_time;
+        const user_id = req.query.user_id;
+        const course_id = req.query.course_id;
+        let page = 1;
+        if (req.query.page) {
+            page = req.query.page;
+        }
+
+        let sql = "select *, (select count(id) from comments where comments.product_id = products.id) as comments_count " +
+            "from products " +
+            "join users on users.id = products.author_id " +
+            "left join users as fusers on fusers.id = products.feature_id " +
+            "left join categories on categories.id = products.category_id " +
+            "left join topic_attendances on topic_attendances.product_id = products.id " +
+            "left join topics on topics.id = topic_attendances.topic_id " +
+            "left join groups on groups.id = topics.group_id ";
+
+        sql += " where  products.deleted_at is NULL and ";
+        if (course_id) {
+            sql += "products.id in " +
+                "(select topic_attendances.product_id from topics " +
+                "right join topic_attendances on topics.id = topic_attendances.topic_id " +
+                "where group_id in " +
+                "(select groups.id from classes " +
+                "left join groups on groups.class_id = classes.id " +
+                "where classes.course_id = " + course_id + ") and topic_attendances.product_id is not null) "
+            sql += " and ";
+        }
+
+        sql += " DATE(products.created_at) >= '" + start_time + "'" ;
+        sql += " DATE(products.created_at) <= '" + end_time + "'" ;
+        sql += " order by rating desc limit 12 offset " + (page - 1) * 12;
+
+
+        let promiseArray = [];
+        const options = {sql, nestTables: true};
+        const promise1 = new Promise(function (resolve, reject) {
+            pool.query(options, function (error, rows, fields) {
+                if (error) console.log(error);
+
+                rows.forEach(function (result) {
+                    const promise = new Promise(function (resolve, reject) {
+                        let product = result.products;
+
+
+                        let data = Object.assign({}, product, {
+                            author: transformer.author(result.users)
+                        });
+
+                        data['content'] = null;
+
+                        if (result[''].comments_count) {
+                            data['comments_count'] = result[''].comments_count;
+                        } else {
+                            data['comments_count'] = 0;
+                        }
+
+                        if (result.groups.id) {
+                            data['group'] = {
+                                id: result.groups.id,
+                                name: result.groups.name,
+                                link: '/group/' + result.groups.link
+                            }
+                        }
+
+                        if (product.feature_id > 0) {
+                            data['feature'] = {
+                                id: result.fusers.id,
+                                name: result.fusers.name,
+                                username: result.fusers.username,
+                            }
+                        }
+
+                        if (result.categories.id) {
+                            data['category'] = {
+                                name: result.categories.category_name,
+                                id: result.categories.id
+                            }
+                        }
+
+                        pool.query('select count(id) as count from likes where likes.product_id=' + product.id,
+                            function (error, result, fields) {
+                                if (error) return console.log(error);
+                                data['likes_count'] = result[0].count;
+
+                                pool.query('select name, username, avatar_url ' +
+                                    'from users join likes on ' +
+                                    'likes.liker_id = users.id where likes.product_id = ' + product.id,
+                                    function (error, likers, fields) {
+                                        if (error) return console.log(error);
+
+                                        data["likers"] = likers;
+
+                                        data = Object.assign(data, transformer.productType(product));
+
+
+                                        if (user_id) {
+                                            pool.query("select count(id) as count from likes where liker_id=" +
+                                                user_id + " and product_id=" + product.id, function (error, rows, fields) {
+                                                data['liked'] = rows[0].count > 0;
+                                            });
+                                        }
+
+                                        if (product.type === 2) {
+                                            pool.query('select value from colors where product_id=' + product.id, function (error, colors, fields) {
+                                                data['colors'] = colors.map(function (color) {
+                                                    return color.value;
+                                                });
+                                                resolve(data);
+                                            });
+                                        } else {
+                                            resolve(data);
+                                        }
+
+                                    });
+
+
+                            });
+
+                    });
+                    promiseArray.push(promise);
+                });
+                resolve(true);
+            });
+        });
+
+        promise1.then(function () {
+            Promise.all(promiseArray).then(function (products) {
+                res.json({products});
+            }, function (err) {
+                console.log(err);
+            });
+        });
+
+
+    },
 };
