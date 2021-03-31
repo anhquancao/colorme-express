@@ -369,7 +369,7 @@ module.exports = {
         }
 
         sql += ` DATE(products.created_at) >= "${start_time}" `;
-        sql += ` DATE(products.created_at) <= "${end_time}" `;
+        sql += ` and DATE(products.created_at) <= "${end_time}" `;
         sql += " order by rating desc limit 12 offset " + (page - 1) * 12;
 
 
