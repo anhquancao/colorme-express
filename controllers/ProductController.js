@@ -337,6 +337,15 @@ module.exports = {
 
 
     },
+    weekRating:function (req, res) {
+        const start_time = req.query.start_time;
+        const end_time = req.query.end_time;
+        let sql = ` select id from products where created_at >= ${start_time} and created_at <= ${end_time} order by rating desc`;
+        const options = {sql, nestTables: true};
+        pool.query(options, function (error, rows, fields) {
+                        res.json({weekRating: rows})
+        });
+    },
     test: function (req, res) {
         const start_time = req.query.start_time;
         const end_time = req.query.end_time;
@@ -344,7 +353,7 @@ module.exports = {
         const course_id = req.query.course_id;
         const order_by = req.query.order_by || 'rating';
         const order_by_type = req.query.order_by_type || 'desc';
-        console.log(order_by,order_by_type)
+
         let page = 1;
         if (req.query.page) {
             page = req.query.page;
