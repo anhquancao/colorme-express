@@ -12,6 +12,13 @@ module.exports = {
             url: process.env.BASE_URL + "profile/" + author.username
         };
     },
+    moreProductType: function (product) {
+        return {
+            id: product.id,
+            thumb_url: product.thumb_url,
+            rating: product.rating
+        };
+    },
     productType: function (product) {
         let data = {
             title: product.title,

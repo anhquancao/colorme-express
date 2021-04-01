@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="Course home info">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="more product">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/Transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/Transformer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1574406581125" duration="365000" />
       <workItem from="1581333843083" duration="457000" />
       <workItem from="1617176134765" duration="4618000" />
-      <workItem from="1617244389916" duration="1747000" />
+      <workItem from="1617244389916" duration="2103000" />
     </task>
     <task id="LOCAL-00001" summary="Course home info">
       <created>1574000192701</created>
@@ -212,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617180249532</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="more product">
+      <created>1617249099910</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1617249099910</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +241,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Course home info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Course home info" />
+    <MESSAGE value="more product" />
+    <option name="LAST_COMMIT_MESSAGE" value="more product" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
