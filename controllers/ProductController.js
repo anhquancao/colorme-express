@@ -479,7 +479,7 @@ module.exports = {
 
 
                                 pool.query({sql:'select * from products ' +
-                                        'join users on users.id = products.author_id where rating >= 10 and author_id=' + product.author_id +
+                                        ' where rating >= 10 and author_id=' + product.author_id +
                                         " and products.id != " + product.id + " order by RAND() limit 4", nestTables: true},
                                     function (error, result, fields) {
                                     if (error) return console.log(error);
