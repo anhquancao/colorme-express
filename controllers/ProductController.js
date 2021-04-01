@@ -343,8 +343,8 @@ module.exports = {
         let sql = `select id from products where created_at >= '${start_time}' and created_at <= '${end_time}' order by rating desc`;
         const options = {sql, nestTables: true};
         pool.query(options, function (error, rows, fields) {
-                let weekRating = rows.map(product=>{
-                   return product;
+                let weekRating = rows.map(row=>{
+                   return row.products.id;
                 });
                 res.json({weekRating})
         });

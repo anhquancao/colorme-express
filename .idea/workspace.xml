@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc1a1a5-8972-4c4c-b73a-32d320124bc6" name="Default" comment="more product">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +125,7 @@
       <workItem from="1574406581125" duration="365000" />
       <workItem from="1581333843083" duration="457000" />
       <workItem from="1617176134765" duration="4618000" />
-      <workItem from="1617244389916" duration="5909000" />
+      <workItem from="1617244389916" duration="6167000" />
     </task>
     <task id="LOCAL-00001" summary="Course home info">
       <created>1574000192701</created>
@@ -287,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617262856250</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="more product">
+      <created>1617262889997</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1617262889997</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
