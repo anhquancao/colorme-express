@@ -463,7 +463,7 @@ module.exports = {
 
                                     data['more_products'] = result.map(function (r) {
 
-                                        const p = Object.assign({}, r.products, transformer.moreProductType(r.products));
+                                        const p = Object.assign({}, transformer.moreProductType(r.products));
                                         return p;
                                     });
                                     //likers
