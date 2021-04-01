@@ -342,6 +342,8 @@ module.exports = {
         const end_time = req.query.end_time;
         const user_id = req.query.user_id;
         const course_id = req.query.course_id;
+        const order_by = req.query.order_by || 'rating';
+        const order_by_type = req.query.order_by_type || 'desc';
         let page = 1;
         if (req.query.page) {
             page = req.query.page;
@@ -370,7 +372,7 @@ module.exports = {
 
         sql += ` DATE(products.created_at) >= "${start_time}" `;
         sql += ` and DATE(products.created_at) <= "${end_time}" `;
-        sql += " order by rating desc limit 12 offset " + (page - 1) * 12;
+        sql += ` order by ${order_by} ${order_by_type} limit 12 offset ` + (page - 1) * 12;
 
 
         let promiseArray = [];
