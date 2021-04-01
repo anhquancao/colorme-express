@@ -378,7 +378,6 @@ module.exports = {
         const promise1 = new Promise(function (resolve, reject) {
             pool.query(options, function (error, rows, fields) {
                 if (error) console.log(error);
-
                 rows.forEach(function (result) {
                     const promise = new Promise(function (resolve, reject) {
                         let product = result.products;
@@ -453,7 +452,24 @@ module.exports = {
                                             resolve(data);
                                         }
 
+                                });
+
+
+                                pool.query({sql:'select * from products ' +
+                                        'join users on users.id = products.author_id where author_id=' + product.author_id +
+                                        " and products.id != " + product.id + " order by RAND() limit 5", nestTables: true},
+                                    function (error, result, fields) {
+                                    if (error) return console.log(error);
+
+                                    data['more_products'] = result.map(function (r) {
+
+                                        const p = Object.assign({}, r.products, transformer.productType(r.products));
+                                        return Object.assign({}, p, {author: transformer.author(r.users)});
                                     });
+                                    //likers
+
+                                });
+
 
 
                             });
