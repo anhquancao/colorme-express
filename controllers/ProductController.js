@@ -340,7 +340,7 @@ module.exports = {
     weekRating:function (req, res) {
         const start_time = req.query.start_time;
         const end_time = req.query.end_time;
-        let sql = `select id from products where DATE(created_at) >= '${start_time}' and DATE(created_at) <= '${end_time}' order by rating desc , created_at desc`;
+        let sql = `select id from products where DATE(created_at) >= '${start_time}' and DATE(created_at) <= '${end_time}' order by rating desc , created_at`;
         const options = {sql, nestTables: true};
         pool.query(options, function (error, rows, fields) {
                 let weekRating = rows.map(row=>{
@@ -356,7 +356,7 @@ module.exports = {
         const course_id = req.query.course_id;
         const order_by = req.query.order_by || 'rating';
         const order_by_type = req.query.order_by_type || 'desc';
-
+        const additional_order_by = order_by == 'rating' ? ' , created_at desc' : '';
         let page = 1;
         if (req.query.page) {
             page = req.query.page;
@@ -385,7 +385,7 @@ module.exports = {
 
         sql += ` DATE(products.created_at) >= "${start_time}" `;
         sql += ` and DATE(products.created_at) <= "${end_time}" `;
-        sql += ` order by products.${order_by} ${order_by_type} limit 12 offset ` + (page - 1) * 12;
+        sql += ` order by products.${order_by} ${order_by_type} ${additional_order_by} limit 12 offset ` + (page - 1) * 12;
 
 
         let promiseArray = [];
