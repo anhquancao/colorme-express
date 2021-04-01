@@ -344,7 +344,7 @@ module.exports = {
         const options = {sql, nestTables: true};
         pool.query(options, function (error, rows, fields) {
                 let weekRating = rows.map(product=>{
-                   return product.id;
+                   return product;
                 });
                 res.json({weekRating})
         });
