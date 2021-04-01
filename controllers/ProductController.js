@@ -183,7 +183,7 @@ module.exports = {
         });
 
     },
-    products: function (req, res) {
+    oldProducts: function (req, res) {
         const filter = req.query.filter;
         const user_id = req.query.user_id;
         const course_id = req.query.course_id;
@@ -349,7 +349,7 @@ module.exports = {
                 res.json({weekRating})
         });
     },
-    test: function (req, res) {
+    products: function (req, res) {
         const start_time = req.query.start_time;
         const end_time = req.query.end_time;
         const user_id = req.query.user_id;
