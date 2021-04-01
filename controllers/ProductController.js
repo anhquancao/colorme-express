@@ -356,7 +356,15 @@ module.exports = {
         const course_id = req.query.course_id;
         const order_by = req.query.order_by || 'rating';
         const order_by_type = req.query.order_by_type || 'desc';
-        const additional_order_by = order_by == 'rating' && order_by_type == 'desc' ? ' , products.created_at ' : '';
+        let additional_order_by =  '';
+        if(order_by == 'rating'){
+            if(order_by_type == 'desc'){
+                additional_order_by = ' , products.created_at ';
+            }
+            if(order_by_type == 'asc'){
+                additional_order_by = ' , products.created_at desc';
+            }
+        }
         let page = 1;
         if (req.query.page) {
             page = req.query.page;
