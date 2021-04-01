@@ -373,7 +373,7 @@ module.exports = {
 
         sql += ` DATE(products.created_at) >= "${start_time}" `;
         sql += ` and DATE(products.created_at) <= "${end_time}" `;
-        sql += ` order by ${order_by} ${order_by_type} limit 12 offset ` + (page - 1) * 12;
+        sql += ` order by products.${order_by} ${order_by_type} limit 12 offset ` + (page - 1) * 12;
 
 
         let promiseArray = [];
