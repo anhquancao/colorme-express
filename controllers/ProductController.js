@@ -340,7 +340,7 @@ module.exports = {
     weekRating:function (req, res) {
         const start_time = req.query.start_time;
         const end_time = req.query.end_time;
-        let sql = `select id from products where DATE(created_at) >= '${start_time}' and DATE(created_at) <= '${end_time}' order by rating desc`;
+        let sql = `select id from products where DATE(created_at) >= '${start_time}' and DATE(created_at) <= '${end_time}' order by rating desc , created_at desc`;
         const options = {sql, nestTables: true};
         pool.query(options, function (error, rows, fields) {
                 let weekRating = rows.map(row=>{
