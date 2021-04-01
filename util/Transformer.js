@@ -16,7 +16,8 @@ module.exports = {
         return {
             id: product.id,
             thumb_url: product.thumb_url,
-            rating: product.rating
+            rating: product.rating,
+            linkId: helper.convertViToEng(product['title']).replace(/ /g, "-") + "-" + product.id
         };
     },
     productType: function (product) {
