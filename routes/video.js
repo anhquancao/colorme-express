@@ -21,7 +21,7 @@ router.post('/upload', function (req, res, next) {
         return res.status(500).send("error: video");
 
     const file_name = uuidv4();
-    const file_path = "video/" + file_name + '_'+req.body.user_id'_' + req.body.file_name;
+    const file_path = "video/" + file_name + '_' + req.body.file_name;
 
 
     req.files.video.mv(file_path, function (err) {
